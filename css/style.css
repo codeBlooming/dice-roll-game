@@ -1,0 +1,120 @@
+@font-face {
+  font-family: "Lato Light";
+  src: url("../fonts/Lato-Light.ttf");
+}
+@font-face {
+  font-family: "Lato Thin";
+  src: url("../fonts/Lato-Thin.ttf");
+}
+
+body {
+  font-family: "Lato Light";
+  color:#333;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg,#B09F89 , #B18149 , #604443 );
+}
+
+.container {
+  width:1000px;
+  min-width:1000px;
+  height:600px;
+  background-color: #eee;
+  box-shadow: 0 0 20px grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playerOneGroup, .playerTwoGroup {
+  width:50%;
+  height: 100%;
+}
+
+.playerOneGroup {
+  /* background-color: goldenrod; */
+  margin-right: -100px;
+}
+
+.playerTwoGroup {
+  /* background-color: blueviolet; */
+  margin-left: -100px;
+}
+
+.btnGroup{
+  min-width:200px;
+  /* background-color: chartreuse; */
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.playerName{
+  margin:120px 100px 10px 100px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.playerGlobalScore {
+  margin:10px 100px 120px 100px;
+  text-align: center;
+  font-size: 80px;
+  color:#EB4D4D;
+  font-family: "Lato Thin";
+}
+
+.playerCurrentScoreBlock{
+  margin:auto;
+  text-align: center;
+  width:120px;
+  height:85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #EB4D4D;
+}
+
+.currentLabel{
+  margin:15px 15px 5px 15px;
+  font-size: 12px;
+}
+.playerCurrentScore {
+  color:#eee;
+  font-size: 30px;
+}
+
+
+/*BOUTONS*/
+.gameBtn {
+  border:0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+ion-icon, .icon{
+  color:#EB4D4D;  
+  font-size: 32px;
+  font-weight: 100;
+}
+button>span {
+  margin-left: 20px;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+
+.dice {
+  width:100px;
+  height:100px;
+  box-shadow: 0 0 6px rgba(15,15,15,.1);
+  border-radius: 4px;
+}

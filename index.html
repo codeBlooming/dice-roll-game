@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Roll a dice!</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="playerOneGroup">
+        <div class="playerName">PLAYER 1</div>
+        <div class="playerGlobalScore">0</div>
+        <div class="playerCurrentScoreBlock">
+          <div class="currentLabel">CURRENT</div>
+          <div class="playerCurrentScore">0</div>
+        </div>
+      </div>
+
+      <div class="btnGroup">
+
+        <button class="gameBtn" style="margin-top: 30px;">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          <span>NEW GAME</span>
+        </button>
+        
+        <div class="dice" style="margin-top: 100px;">
+        <img src="./images/dice_6.png" alt="dice" class="dice">
+        </div>
+
+        <button class="gameBtn" style="margin-top: 210px;">
+          <ion-icon name="sync-outline"></ion-icon>
+          <span>ROLL DICE</span>
+        </button>
+
+        <button class="gameBtn" style="margin-top: 20px;">
+          <ion-icon name="download-outline"></ion-icon>
+          <span>HOLD</span>
+        </button>
+
+      </div>
+
+      <div class="playerTwoGroup">
+        <div class="playerName">PLAYER 2</div>
+        <div class="playerGlobalScore">0</div>
+        <div class="playerCurrentScoreBlock">
+          <div class="currentLabel">CURRENT</div>
+          <div class="playerCurrentScore">0</div>
+        </div>
+      </div>
+
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
 </html>
