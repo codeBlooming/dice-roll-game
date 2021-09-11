@@ -1,58 +1,88 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <title>Roll a dice!</title>
-  </head>
-  <body>
-    <div class="container">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roll a dice!</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
 
-      <div class="playerOneGroup">
-        <div class="playerName">PLAYER 1</div>
-        <div class="playerGlobalScore">0</div>
-        <div class="playerCurrentScoreBlock">
-          <div class="currentLabel">CURRENT</div>
-          <div class="playerCurrentScore">0</div>
+  <div class="container vh-100 d-flex">
+    <div class="row align-self-center gameBlock ">
+      <div class="col d-flex">
+
+        <div class="playerOneGroup w-50 mr-n6" id="player1">
+          <div class="playerName mt-6">PLAYER 1</div>
+          <div class="playerGlobalScore mb-6" id="globalScorePlayer1">0</div>
+          <div class="playerCurrentScoreBlock mb-lg-6 mb-md-5 mb-sm-4 mb-4 mt-6 p-2">
+            <div class="currentLabel">CURRENT</div>
+            <div class="playerCurrentScore mb-6" id="currentScorePlayer1">0</div>
+          </div>
         </div>
-      </div>
-
-      <div class="btnGroup">
-
-        <button class="gameBtn" style="margin-top: 30px;">
-          <ion-icon name="add-circle-outline"></ion-icon>
-          <span>NEW GAME</span>
-        </button>
-        
-        <div class="dice" style="margin-top: 100px;">
-        <img src="./images/dice_6.png" alt="dice" class="dice">
+  
+        <div class="btnGroup d-flex flex-column align-items-center">
+  
+          <button class="gameBtn mt-4 mb-4 d-flex align-items-center" id="newGameBtn">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <div class="add-circle-outline"></div>
+            <span>NEW GAME</span>
+          </button>
+          
+          <div class="mt-6 mb-3 align-self-center" >
+            <img src="./images/dice_6.png" alt="dice" class="dice" id="dice">
+          </div>
+  
+          <button class="gameBtn mt-lg-6 mt-md-5 mt-sm-4 mt-2 d-flex align-items-center" id="rollDiceBtn">
+            <ion-icon name="sync-outline"></ion-icon>
+            <span>ROLL DICE</span>
+          </button>
+  
+          <button class="gameBtn mt-sm-3 mt-1 d-flex align-items-center"  id="holdBtn">
+            <ion-icon name="download-outline"></ion-icon>
+            <span>HOLD</span>
+          </button>
+  
         </div>
-
-        <button class="gameBtn" style="margin-top: 210px;">
-          <ion-icon name="sync-outline"></ion-icon>
-          <span>ROLL DICE</span>
-        </button>
-
-        <button class="gameBtn" style="margin-top: 20px;">
-          <ion-icon name="download-outline"></ion-icon>
-          <span>HOLD</span>
-        </button>
-
-      </div>
-
-      <div class="playerTwoGroup">
-        <div class="playerName">PLAYER 2</div>
-        <div class="playerGlobalScore">0</div>
-        <div class="playerCurrentScoreBlock">
-          <div class="currentLabel">CURRENT</div>
-          <div class="playerCurrentScore">0</div>
+  
+        <div class="playerTwoGroup w-50  ml-n6"  id="player2">
+          <div class="playerName mt-6">PLAYER 2</div>
+          <div class="playerGlobalScore mb-6" id="globalScorePlayer2">0</div>
+          <div class="playerCurrentScoreBlock mb-lg-6 mb-md-5 mb-sm-4 mb-4 mt-6 p-2">
+            <div class="currentLabel">CURRENT</div>
+            <label class="playerCurrentScore"  id="currentScorePlayer2">0</label>
+          </div>
         </div>
+  
       </div>
-
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  </body>
+  </div>
+  <div class="modal shadow" tabindex="-1" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn modalBtn" onclick="newGame()">Play another game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script src="./js/bootstrap.4.6.0.bundle.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
 </html>

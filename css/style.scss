@@ -1,0 +1,165 @@
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+$enable-negative-margins: true;
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 6.25),
+    ),
+    $spacers
+    );
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$themeColor : #EB4D4D;
+$themeHoverColor: #B73C3C;
+
+@font-face {
+  font-family: "Lato Light";
+  src: url("../fonts/Lato-Light.ttf");
+}
+@font-face {
+  font-family: "Lato Thin";
+  src: url("../fonts/Lato-Thin.ttf");
+}
+
+body {
+  font-family: "Lato Light";
+  color:#333;
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg,#B09F89 , #B18149 , #604443 );
+}
+
+.col {
+  padding: 0;
+}
+
+.gameBlock {
+  width: 100vw;
+  background-color: #eee;
+  box-shadow: 0 0 20px grey;
+}
+
+
+.btnGroup{
+  min-width:200px;
+  /* background-color: chartreuse; */
+  z-index: 2;
+  height: 100%; 
+}
+
+.playerName{
+  text-align: center;
+  font-size:16px;
+}
+
+.playerGlobalScore {
+  text-align: center;
+  font-size: 80px;
+  color:#EB4D4D;
+  font-family: "Lato Thin";
+}
+
+.playerCurrentScoreBlock{
+  margin:auto;
+  text-align: center;
+  width:120px;
+  height:85px;
+
+  background-color: $themeColor;
+}
+
+.currentLabel{
+  // margin:15px 15px 5px 15px;
+  font-size: 12px;
+}
+.playerCurrentScore {
+  color:#eee;
+  font-size: 30px;
+}
+
+/*BOUTONS*/
+.gameBtn {
+  background: none;
+  border:0;
+  cursor: pointer;
+}
+ion-icon, .icon{
+  color:$themeColor;  
+  font-size: 32px;
+  font-weight: 100;
+}
+button>span {
+  margin-left: 20px;
+  font-weight: 200;
+  font-size: 16px;
+}
+.modalBtn {
+  background-color: $themeColor;
+  color:#eee;
+}
+.modalBtn:hover {
+  background-color: $themeHoverColor;
+  color:#eee;
+}
+/******************/
+
+
+.dice {
+  width:50px;
+  height:50px;
+  box-shadow: 0 0 6px rgba(15,15,15,.1);
+  border-radius: 4px;
+}
+
+
+/* MEDIA QUERIES */
+/* Small devices (576px and up) */
+@media screen and (min-width: 576px) {
+  .playerName{
+    font-size: 2.5vw;
+  }
+
+  .dice {
+    width:100px;
+    height:100px;
+  }
+
+
+  .gameBlock {
+    height: 600px;;
+  }
+}
+
+
+/*ANIMATIONS*/
+
+.activePlayer {  
+  animation-duration: 1.5s;
+  animation-name: slidein;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes slidein {
+  0% {
+    background-color: rgb(255, 255, 255);
+  }
+
+  100% {
+    background-color: rgb(220,220, 220);
+  }
+}
+
+
