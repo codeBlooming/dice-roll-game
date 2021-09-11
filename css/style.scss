@@ -61,6 +61,19 @@ body {
   font-size:16px;
 }
 
+.redBall::after {
+  content:"";
+  height: 12px;
+  width: 12px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  background-color: $themeColor;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+
 .playerGlobalScore {
   text-align: center;
   font-size: 80px;
@@ -144,7 +157,7 @@ button>span {
 
 .activePlayer {  
   animation-duration: 1.5s;
-  animation-name: slidein;
+  animation-name: fadein;
   animation-delay: 0s;
   animation-direction: normal;
   animation-timing-function: ease;
@@ -152,7 +165,7 @@ button>span {
 }
 
 
-@keyframes slidein {
+@keyframes fadein {
   0% {
     background-color: rgb(255, 255, 255);
   }
@@ -161,5 +174,74 @@ button>span {
     background-color: rgb(220,220, 220);
   }
 }
+
+.slide-up {
+  animation-duration: 1s;
+  animation-name: slideUp;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  // animation-fill-mode: forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform:  translateY(-50px) ;
+  }
+  
+}
+
+.slide-down {
+  animation-duration: 1s;
+  animation-name: slideDown;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  // animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+  0% {
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform:  translateY(50px) ;
+  }
+  
+}
+
+
+
+
+.dice-bounce {
+  animation-duration: 1s;
+  animation-name: bounce;
+  animation-delay: 0s;
+  animation-direction: normal;
+  // animation-timing-function: ease-in-out;
+  // animation-fill-mode: forwards;
+  
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0% { transform: scale(1.1); opacity: 1 }
+  50% { transform: scale(1.2); opacity: .7; }
+  60% { transform: scale(0.6); opacity: 1 }
+  80% { transform: scale(0.95) }
+  100% { transform: scale(0.85) }
+  
+}
+
 
 
