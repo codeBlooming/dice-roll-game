@@ -9,23 +9,27 @@ const _players = [
                 ]
 
 
+window.reload = function reload() {
+  newGame()
+}
+
 //Begin a new game
 const newGame = () => {
-  
-  //close modal if exist
-  if($('#myModal')._isShown) {
-    $('#myModal').modal('hide')
-  }
 
-  //reset players counters
+  $('#myModal').modal('hide')  
+
+  //reset players 
   _players[0].reset()
   _players[1].reset()
+
+  _players[0].setActive()
+  _players[1].setInactive()
 
   //enable buttons
   enableBtns()
 
 //for debugging only
-  _players[0].setCurrentScore(100)
+  _players[1].setCurrentScore(0)
 }
 
 
@@ -71,7 +75,7 @@ const hold = () => {
 
   if(_players[currentPlayer].getGlobalScore() >= scoreLimit)
   {
-    gameOver(_players[currentPlayer].getGlobalScore(), _players[currentPlayer].getId())
+    gameOver(_players[currentPlayer].getId())
   }else{
     switchToNextPlayer()
   }
@@ -111,7 +115,7 @@ $('#rollDiceBtn').on('click', () => {
   }
 )
 $('#holdBtn').on('click', ()=> {
-  //to avoid multi click an protect animations
+  //to avoid multi click and protect animations
   disableBtns()
   $('#currentScorePlayer'+_players[currentPlayer].getId())
     .addClass('slide-up')
@@ -119,21 +123,18 @@ $('#holdBtn').on('click', ()=> {
       $('#currentScorePlayer'+_players[currentPlayer].getId())
         .off()
         .removeClass('slide-up')
-        // .text(0)
       hold()
-      // toggleBtn()
   } )
   }
 )
 
-const gameOver = (score, player) => {  
+const gameOver = (player) => {  
   $(".modal-title").text(`PLAYER ${player} IS THE WINNER !!! `)
-  $(".modal-body p").text(`HE WON WITH ${score} POINTS`)
+  $(".modal-body p").text(`Player 1 with ${_players[0].getGlobalScore()} Points VS Player 2 with ${_players[1].getGlobalScore()} Points`)
   $('#myModal').modal('show')
 }
 
 //When Jquery is ready, we can load a new game
 $( () => {  
-
   newGame() 
 })
