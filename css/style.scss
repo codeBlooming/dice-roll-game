@@ -163,8 +163,6 @@ button>span {
   animation-timing-function: ease;
   animation-fill-mode: forwards;
 }
-
-
 @keyframes fadein {
   0% {
     background-color: rgb(255, 255, 255);
@@ -181,9 +179,7 @@ button>span {
   animation-delay: 0s;
   animation-direction: normal;
   animation-timing-function: ease;
-  // animation-fill-mode: forwards;
 }
-
 @keyframes slideUp {
   0% {
     
@@ -194,8 +190,7 @@ button>span {
   100% {
     opacity: 0;
     transform:  translateY(-50px) ;
-  }
-  
+  }  
 }
 
 .slide-down {
@@ -204,9 +199,7 @@ button>span {
   animation-delay: 0s;
   animation-direction: normal;
   animation-timing-function: ease;
-  // animation-fill-mode: forwards;
 }
-
 @keyframes slideDown {
   0% {
   }
@@ -220,27 +213,19 @@ button>span {
   
 }
 
-
-
-
 .dice-bounce {
   animation-duration: 1s;
   animation-name: bounce;
   animation-delay: 0s;
   animation-direction: normal;
-  // animation-timing-function: ease-in-out;
-  // animation-fill-mode: forwards;
-  
-  transform: scale(0.95);
 }
-
 @keyframes bounce {
-  0% { transform: scale(1.1); opacity: 1 }
-  50% { transform: scale(1.2); opacity: .7; }
-  60% { transform: scale(0.6); opacity: 1 }
+  0% { transform: scale(1.1) }
+  50% { transform: scale(1.2) }
+  60% { transform: scale(0.6) }
   80% { transform: scale(0.95) }
-  100% { transform: scale(0.85) }
-  
+  90% { transform: scale(0.85) }
+  100% { transform: scale(1) }  
 }
 
 
