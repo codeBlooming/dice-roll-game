@@ -28,10 +28,12 @@ const newGame = () => {
   _players[0].reset()
   _players[1].reset()
 
-  _players[0].setActive()
   _players[1].setInactive()
+  _players[0].setActive()
+  currentPlayer = 0
 
   //enable buttons
+  showBtns()
   enableBtns()
 
 //for debugging only
@@ -113,6 +115,15 @@ const disableBtns = () => {
   $('#holdBtn').prop('disabled', true);
 }
 
+const hideBtns = () => {
+  $('#rollDiceBtn').css('visibility', 'hidden');
+  $('#holdBtn').css('visibility', 'hidden');
+}
+
+const showBtns = () => {
+  $('#rollDiceBtn').css('visibility', 'visible');
+  $('#holdBtn').css('visibility', 'visible');
+}
 //Generate handlers on buttons
 $('#newGameBtn').on('click', newGame )
 $('#rollDiceBtn').on('click', () => {
@@ -138,6 +149,7 @@ const gameOver = (player) => {
   $(".modal-title").text(`PLAYER ${player} IS THE WINNER !!! `)
   $(".modal-body p").text(`Player 1 with ${_players[0].getGlobalScore()} Points VS Player 2 with ${_players[1].getGlobalScore()} Points`)
   $('#myModal').modal('show')
+  hideBtns()
 }
 
 //When Jquery is ready, we can load a new game
