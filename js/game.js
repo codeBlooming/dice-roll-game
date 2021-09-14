@@ -1,7 +1,13 @@
+import $ from 'jquery'
+import Popper from 'popper.js'
+import 'bootstrap'
 import Player from './player.js'
+import '../css/style.scss'
+
 
 const scoreLimit = 100;
 let currentPlayer = 0;
+
 
 const _players = [
                   new Player(1, $("#globalScorePlayer1"), $("#currentScorePlayer1"), $('#player1'), $('#playerName1') ), 

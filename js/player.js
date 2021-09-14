@@ -1,3 +1,4 @@
+import $ from 'jquery'
 export default class Player {
   globalScore = 0;
   currentScore = 0;
@@ -28,7 +29,8 @@ export default class Player {
     return this.currentScore
   }
 
-  setGlobalScore = () => {    
+  setGlobalScore = () => {   
+    console.log(this.globalScore); 
     let actualGlobalScore = this.globalScore
     let newGlobalScore = this.globalScore + this.currentScore
     this.showCounter(actualGlobalScore,newGlobalScore, this.globalScoreHtmlElement )
