@@ -49,7 +49,7 @@ module.exports = (env, argv) => {
       }
     ]
   },
-  plugins: [  new HtmlWebpackPlugin({ title: 'Roll a dice!', template:'index.html' }),
+  plugins: [  new HtmlWebpackPlugin({ title: 'Roll a dice!', template:'index.html', minify:true }),
               new MiniCssExtractPlugin({filename: "style.css", chunkFilename: '[id].css'}),
               new CopyWebpackPlugin(
                 {
